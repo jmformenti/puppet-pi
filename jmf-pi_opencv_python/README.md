@@ -47,28 +47,33 @@ To use this module you need about 3GB free disk space and puppet installed (>3.x
 Example of install OpenCV on Raspberry:
 
 1. Install this puppet module on Raspberry
-```
-sudo apt-get install puppet git
-git clone TODO
-puppet module build jmf-py_opencv_python
-puppet module install jmf-py_opencv_python/pkg/jmf-py_opencv_python-0.1.0.tar.gz
-```
+
+ ```
+ sudo apt-get install puppet git
+ git clone https://github.com/jmformenti/puppet-pi.git
+ puppet module build puppet-pi/jmf-pi_opencv_python
+ puppet module install puppet-pi/jmf-pi_opencv_python/pkg/jmf-pi_opencv_python-0.1.0.tar.gz
+ ```
+
 2. Create puppet manifest to install, for example, install.pp:
-```
-class { "pi_opencv_python":
-	python_version => "3.4",
-	opencv_version => "3.0.0",
-	virtualenv_name => "cv"
-}
-```
+
+ ```
+ class { "pi_opencv_python":
+ 	python_version => "3.4",
+ 	opencv_version => "3.0.0",
+ 	virtualenv_name => "cv"
+ }
+ ```
+
 3. Install OpenCV and Python, the timing for this step is about 1.5-2 hours. Use background execution:
-```
-nohup sudo puppet apply install.pp &
-```
-* To view log to ensure all it's ok:
-```
-tail -f nohup.out
-```
+
+ ```
+ nohup sudo puppet apply install.pp &
+ ```
+ * To view log to ensure all it's ok:
+ ```
+ tail -f nohup.out
+ ```
 
 You can install other versions of OpenCV in another python virtual environment, then you need only execute steps 2 and 3.
 
