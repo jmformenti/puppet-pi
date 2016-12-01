@@ -102,6 +102,6 @@ Module parameters:
 ## Limitations
 
 * OpenCV 2.x is not compatible with Python 3.x
-* Using Python3 only works with version 3.4. OpenCV build ever detects the system version of Python3 and when you install virtualenv package, Python 3.4 is installed Python 3.4, then only it's possible use 3.4.
+* If you want to user Python3 only it's possible use 3.4 version. OpenCV build step always detects the system version of Python3 and when virtualenv package is installed has Python 3.4 as a dependency, then only it's possible use 3.4.
   The solution could be modify the build step of OpenCV to set a given Python version, I did some tries with no luck.
 
