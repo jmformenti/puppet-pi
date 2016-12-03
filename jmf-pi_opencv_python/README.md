@@ -52,7 +52,8 @@ Example of install OpenCV on Raspberry:
  sudo apt-get install puppet git
  git clone https://github.com/jmformenti/puppet-pi.git
  puppet module build puppet-pi/jmf-pi_opencv_python
- puppet module install puppet-pi/jmf-pi_opencv_python/pkg/jmf-pi_opencv_python-0.1.0.tar.gz
+ sudo puppet module install puppet-pi/jmf-pi_opencv_python/pkg/jmf-pi_opencv_python-0.1.0.tar.gz
+ rm -r puppet-pi
  ```
 
 2. Create puppet manifest to install, for example, install.pp:
